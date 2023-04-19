@@ -1,11 +1,11 @@
 # Mongo 🖥️🛠️ 
 
-<h2>Crear colecciones de Users y Posts</h2>
+<h2>Crear colecciones de Users y Posts 🧑‍💻</h2>
 
 - db.createCollection('posts')
 - db.createCollection('users')
 
-<h2>Insertar al menos 15 publicaciones nuevas</h2>
+<h2>Insertar al menos 15 publicaciones nuevas 📋</h2>
 
 - db.posts.insertOne([
  {
@@ -86,7 +86,7 @@
  
 ![](https://github.com/Goner10/Mongo/blob/main/posts.png)
 
-<h2>Insertar 10 nuevos usuarios</h2>
+<h2>Insertar 10 nuevos usuarios 🧑 </h2>
 
 - db.users.insertMany([
 {
@@ -146,8 +146,110 @@
 
 ![](https://github.com/Goner10/Mongo/blob/main/users.png)
 
-<h2>Actualizar posts y users</h2>
+<h2>Actualizar posts y users ⚙️</h2>
 
 **Actualiza todos los datos de un post**
 
+-  db.posts.updateOne({Title:"Cómo cuidar a tu perro en verano"},
+{ $set: { Title: 'Como cuidar a tu gato', Body:'Hola que tal', Username: 'Maria', Comments:{
+    Username: 'Perico',
+    Body: 'Q bonito'
+},}})
+
+**Actualiza el body de un post**
+
+- db.posts.updateOne({ Title: 'Los mejores destinos para viajar en otoño' },
+
+{
+
+$set: { Body: 'Mira que sitios mas chulos'
+
+},
+
+})
+
+**Actualizar el comentario de un post**
+
+- db.posts.updateOne({ Title: 'Receta de ensalada de quinoa y aguacate' },
+{
+$set: {
+Comments: {
+    Username: 'Goner10',
+    Body: 'muy rica'
+}
+}
+})
+
+**Actualiza todos los datos de un user**
+
+- db.users.updateMany({ Username: 'elonmusk' },
+
+{ $set:{Username: 'Goner', Email: 'gon_marti@yahoo.com', Age: '100'}})
+
+
+**Cambia el email de 2 users**
+
+- db.users.updateOne({ Username: 'Goner' },{ $set:{Email: 'zalito@yahoo.com'}})
+- db.users.updateOne({ Username: 'billgates' },{ $set:{Email: 'mamon@yahoo.com'}})
+
+**Aumenta en 5 años la edad de un usuario**
+
+- db.users.updateOne({ name: 'Goner' },
+{
+$inc: {
+Age: 5
+}
+})
+
+
+<h2>Obtener datos 📈</h2>
+
+**Seleccionar todas las publicaciones**
+
+- db.posts.find()
+
+**Selecciona las publicaciones que coincidan con el username indicado**
+
+- db.posts.find({Username: "Goner"})
+
+**Seleccione todos los usuarios con una edad mayor a 20**
+
+- db.users.find({age:{ $gt: 20}})
+
+**Seleccione todos los usuarios con una edad inferior a 23**
+
+- db.users.find({age: {$lt: 23}})
+
+**Seleccione todos los usuarios que tengan una edad entre 25 y 30 años**
+
+- db.users.find({age: {$gte: 25, $lte: 30}})
+
+**Muestra los usuarios de edad menor a mayor y viceversa**
+
+- db.users.find().sort({age:1})
+- db.users.find().sort({age:-1})
+
+**Seleccione el número total de usuarios**
+
+- db.users.count()
+
+**Seleccione todas las publicaciones y haz que se muestren con la siguiente estructura: Título de la publicación: "title one"**
+
+- db.posts.find().forEach((post)=>{print("Post title: " + post.title)})
+
+**Selecciona solo 2 usuarios**
+
+- db.users.find().limit(2)
+
+
+<h2>Borrar datos</h2>
+
+**Elimina a todos los usuarios con una edad mayor a 30**
+
+db.users.deleteMany({ Age: { $gt: 30 } })
+
+
+<h2>Autor ✒️</h2>
+
+- Gonzalo Martí
 
