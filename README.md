@@ -140,3 +140,14 @@
      Email: 'employee3@company.com',
      Age: 43,
  }
+
+
+**Vista de los users creados en MongoDB**
+
+![](https://github.com/Goner10/Mongo/blob/main/users.png)
+
+<h2>Actualizar posts y users</h2>
+
+**Actualiza todos los datos de un post**
+
+
