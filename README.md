@@ -84,3 +84,59 @@
  
  **Vista de los posts creados en MongoDB**
  
+![](https://github.com/Goner10/Mongo/blob/main/posts.png)
+
+<h2>Insertar 10 nuevos usuarios</h2>
+
+- db.users.insertMany([
+{
+     Username: 'user123',
+     Email: 'user123@example.com',
+     Age: 20,
+ },
+ {
+     Username: 'user456',
+     Email: 'user456@example.com',
+     Age: 28,
+ },
+ {
+     Username: 'user789',
+     Email: 'user789@example.com',
+     Age: 35,
+ },
+ {
+     Username: 'user010',
+     Email: 'user010@example.com',
+     Age: 42,
+ }
+ ])
+ 
+ - db.users.insertMany([
+  {
+     Username: 'elonmusk',
+     Email: 'elonmusk@spacex.com',
+     Age: 50,
+ },
+ {
+     Username: 'billgates',
+     Email: 'billgates@microsoft.com',
+     Age: 66,
+ }
+])
+
+- db.users.insertMany([
+ {
+     Username: 'employee1',
+     Email: 'employee1@company.com',
+     Age: 27,
+ },
+ {
+     Username: 'employee2',
+     Email: 'employee2@company.com',
+     Age: 35,
+ },
+ {
+     Username: 'employee3',
+     Email: 'employee3@company.com',
+     Age: 43,
+ }
